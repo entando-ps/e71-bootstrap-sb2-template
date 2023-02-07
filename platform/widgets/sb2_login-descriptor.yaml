@@ -1,0 +1,101 @@
+code: sb2_login
+titles:
+  en: sb2 Login
+  it: sb2 Login
+group: free
+customUi: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+  <!-- Legacy login with keycloack -->
+  <li class="nav-item dropdown no-arrow">
+      <#if (Session.currentUser.username != "guest") >
+      <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="mr-2 d-none d-lg-inline text-gray-600 small">${Session.currentUser}</span>
+          <img class="img-profile rounded-circle" src="<@wp.resourceURL />bundles/e71-bootstrap-sb2-template-15274a32/resources/sb2/img/undraw_profile.svg">
+      </a>
+      <!-- Dropdown - User Information -->
+      <#if (Session.currentUser.entandoUser) >
+
+      <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+          <#if (!Session.currentUser.credentialsNotExpired) >
+          <div class="alert alert-block">
+              <span>
+                  <@wp.i18n key="USER_STATUS_EXPIRED_PASSWORD" />:
+                  <a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/editPassword.action">
+                  <@wp.i18n key="USER_STATUS_EXPIRED_PASSWORD_CHANGE" />
+                  </a>
+              </span>
+          </div>
+          </#if>
+          </#if>
+
+          <@wp.ifauthorized permission="enterBackend">
+          <a class="dropdown-item" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/main.action?request_locale=<@wp.info key="currentLang" />" >
+          <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+          <@wp.i18n key="SB2_ADMINISTRATION" /></a>
+      </@wp.ifauthorized>
+
+      <div class="dropdown-divider"></div>
+
+      <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+          <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+          <@wp.i18n key="SB2_LOGOUT" />
+      </a>
+
+
+      <@wp.pageWithWidget widgetTypeCode="userprofile_editCurrentUser" var="userprofileEditingPageVar" listResult=false />
+
+      <#if (userprofileEditingPageVar??) >
+      <a href="<@wp.url page="${userprofileEditingPageVar.code}" />" >
+      <@wp.i18n key="userprofile_CONFIGURATION" />
+  </a>
+  </#if>
+
+  </li>
+  <#else>
+  <#if (accountExpired?? && accountExpired == true) >
+  <div class="alert alert-block alert-error">
+      <@wp.i18n key="USER_STATUS_EXPIRED" />
+  </div>
+  </#if>
+
+  <#if (wrongAccountCredential?? && wrongAccountCredential == true) >
+  <div class="alert alert-block alert-error">
+      <@wp.i18n key="USER_STATUS_CREDENTIALS_INVALID" />
+  </div>
+  </#if>
+
+
+  <@wp.currentPage param="code" var="currentPageVar" />
+
+  <a class="nav-link dropdown-toggle" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/login.action?redirectTo=<@wp.url page="${currentPageVar}" />" >
+  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+  <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+      <@wp.i18n key="SB2_LOGIN" />
+  </span>
+  </a>
+
+  </#if>
+
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"><@wp.i18n key="SB2_READY_TO_LEAVE" /></h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+              </div>
+              <div class="modal-body"><@wp.i18n key="SB2_LOG_OUT_BELOW" /></div>
+              <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal"><@wp.i18n key="SB2_CANCEL" /></button>
+                  <a class="btn btn-primary" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/logout.action" >
+                  <@wp.i18n key="SB2_LOGOUT" />
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,17 @@
+code: sb2_demo_report_button
+titles:
+  en: sb2 Demo report button
+  it: sb2 Demo report button
+group: free
+customUi: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">
+          <@wp.currentPage param="title" />
+      </h1>
+
+      <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+          <i class="fas fa-download fa-sm text-white-50"></i>
+             <@wp.i18n key="SB2_REPORT" />
+     </a>
+  </div>

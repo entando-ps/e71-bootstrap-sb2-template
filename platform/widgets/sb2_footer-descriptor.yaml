@@ -1,0 +1,15 @@
+code: sb2_footer
+titles:
+  en: sb2 Footer
+  it: sb2 Footer
+group: free
+customUi: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+
+  <footer class="sticky-footer bg-white">
+      <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+              <span><@wp.i18n key="SBDEMO_COPYRIGHT" /></span>
+          </div>
+      </div>
+  </footer>

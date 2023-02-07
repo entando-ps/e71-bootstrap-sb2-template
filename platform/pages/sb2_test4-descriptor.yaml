@@ -1,0 +1,52 @@
+descriptorVersion: v5
+name: sb2_test4
+parentName: sb2_test2
+titles:
+  en: Test page 4
+  it: Pagina test 4
+pageModel: sbdemo_template
+ownerGroup: free
+joinGroups: []
+displayedInMenu: true
+seo: false
+charset: utf-8
+status: published
+widgets:
+  - code: sb2_sidebar_brand
+    config: null
+    pos: 0
+  - code: sb2_topbar_search
+    config: null
+    pos: 1
+  - code: sb2_nav_item_alerts
+    config: null
+    pos: 2
+  - code: sb2_nav_item_messages
+    config: null
+    pos: 3
+  - code: sb2_login
+    config: null
+    pos: 4
+  - code: sb2_demo_report_button
+    config: null
+    pos: 5
+  - code: sb2_widget_navigation_bar
+    config:
+      navSpec: code(sb2_dashboard_15274a32)
+    pos: 6
+  - code: sb2_widget_navigation_bar
+    config:
+      navSpec: code(sb2_test_15274a32) + code(sb2_test2_15274a32).subtree(1)
+    pos: 7
+  - code: sb2_earnings_monthly_card
+    config: null
+    pos: 8
+  - code: sb2_earnings_annual_card
+    config: null
+    pos: 9
+  - code: sb2_area_chart
+    config: null
+    pos: 12
+  - code: sb2_footer
+    config: null
+    pos: 20

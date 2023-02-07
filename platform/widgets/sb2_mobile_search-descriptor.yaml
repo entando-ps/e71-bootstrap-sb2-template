@@ -1,0 +1,33 @@
+code: sb2_mobile_search
+titles:
+  en: sb2 Mobile Search
+  it: sb2 Mobile Search
+group: free
+customUi: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+  <@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" listResult=false />
+  <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+  <li class="nav-item dropdown no-arrow d-sm-none">
+      <form action="<#if (searchResultPageVar??) ><@wp.url page="${searchResultPageVar.code}" /></#if>" method="get">
+      <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-search fa-fw"></i>
+      </a>
+      <!-- Dropdown - Messages -->
+      <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+           aria-labelledby="searchDropdown">
+          <form class="form-inline mr-auto w-100 navbar-search">
+              <div class="input-group">
+                  <input type="text" class="form-control bg-light border-0 small"
+                         placeholder="<@wp.i18n key="ESSF_SEARCH" />" aria-label="<@wp.i18n key="ESSF_SEARCH" />"
+                  aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                      </button>
+                  </div>
+              </div>
+          </form>
+      </div>
+  </form>
+  </li>

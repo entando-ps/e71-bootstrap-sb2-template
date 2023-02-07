@@ -1,0 +1,48 @@
+- key: SB2_ADMINISTRATION
+  titles:
+    en: Administration
+    it: Amministrazione
+- key: SB2_LOGOUT
+  titles:
+    en: Logout
+    it: Esci
+- key: SB2_READY_TO_LEAVE
+  titles:
+    en: Ready to Leave?
+    it: Vuoi uscire dal portale?
+- key: SB2_LOG_OUT_BELOW
+  titles:
+    en: Select "Logout" below if you are ready to end your current session.
+    it: Seleziona "Esci" di seguito se sei pronto per terminare la sessione corrente.
+- key: SB2_CANCEL
+  titles:
+    en: Cancel
+    it: Cancella
+- key: SBDEMO_DASHBOARD
+  titles:
+    en: Entando Dashboard
+    it: Entando Dashboard
+- key: SBDEMO_SECTION1
+  titles:
+    en: Section 1
+    it: Sezione 1
+- key: SBDEMO_SECTION2
+  titles:
+    en: Section 2
+    it: Sezione 2
+- key: SB2_ENTANDO
+  titles:
+    en: Entando
+    it: Entando
+- key: SB2_LOGIN
+  titles:
+    en: Login
+    it: Accedi
+- key: SBDEMO_COPYRIGHT
+  titles:
+    en: Copyright © Entando 2022
+    it: Copyright © Entando 2022
+- key: SBD2_REPORT
+  titles:
+    en: Call to action
+    it: Bottone CTA

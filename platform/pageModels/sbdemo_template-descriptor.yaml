@@ -1,0 +1,322 @@
+code: sbdemo_template
+description: Template Bootstrap sb2
+configuration:
+  frames:
+    - pos: 0
+      description: Sidebar brand frame 0
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 0
+        x2: 1
+        y2: 0
+    - pos: 1
+      description: Topbar search frame 1
+      mainFrame: false
+      sketch:
+        x1: 2
+        y1: 0
+        x2: 4
+        y2: 0
+    - pos: 2
+      description: Nav item alerts frame 2
+      mainFrame: false
+      sketch:
+        x1: 5
+        y1: 0
+        x2: 6
+        y2: 0
+    - pos: 3
+      description: Nav item Messages frame 3
+      mainFrame: false
+      sketch:
+        x1: 7
+        y1: 0
+        x2: 8
+        y2: 0
+    - pos: 4
+      description: Widget Login frame 4
+      mainFrame: true
+      sketch:
+        x1: 9
+        y1: 0
+        x2: 11
+        y2: 0
+    - pos: 5
+      description: Call to action button frame 5
+      mainFrame: false
+      sketch:
+        x1: 10
+        y1: 1
+        x2: 11
+        y2: 1
+    - pos: 6
+      description: Menu 1 frame 6
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 1
+        x2: 1
+        y2: 2
+    - pos: 7
+      description: Menu 2 frame 7
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 3
+        x2: 1
+        y2: 4
+    - pos: 8
+      description: Earnings (monthly) frame 8
+      mainFrame: false
+      sketch:
+        x1: 3
+        y1: 2
+        x2: 4
+        y2: 2
+    - pos: 9
+      description: Earnings (annual) frame 9
+      mainFrame: false
+      sketch:
+        x1: 5
+        y1: 2
+        x2: 6
+        y2: 2
+    - pos: 10
+      description: TASKS frame 10
+      mainFrame: false
+      sketch:
+        x1: 7
+        y1: 2
+        x2: 8
+        y2: 2
+    - pos: 11
+      description: PENDING REQUESTS frame 11
+      mainFrame: false
+      sketch:
+        x1: 9
+        y1: 2
+        x2: 10
+        y2: 2
+    - pos: 12
+      description: Area Chart frame 12
+      mainFrame: false
+      sketch:
+        x1: 3
+        y1: 3
+        x2: 7
+        y2: 4
+    - pos: 13
+      description: Pie chart frame 13
+      mainFrame: false
+      sketch:
+        x1: 8
+        y1: 3
+        x2: 10
+        y2: 4
+    - pos: 14
+      description: Projects frame 14
+      mainFrame: false
+      sketch:
+        x1: 3
+        y1: 5
+        x2: 6
+        y2: 6
+    - pos: 15
+      description: Illustrations frame 15
+      mainFrame: false
+      sketch:
+        x1: 7
+        y1: 5
+        x2: 10
+        y2: 6
+    - pos: 16
+      description: Color coding frame 16
+      mainFrame: false
+      sketch:
+        x1: 3
+        y1: 7
+        x2: 6
+        y2: 8
+    - pos: 17
+      description: Development Approach 17
+      mainFrame: false
+      sketch:
+        x1: 7
+        y1: 7
+        x2: 10
+        y2: 8
+    - pos: 18
+      description: Sub-menu empty frame 18
+      mainFrame: false
+      sketch:
+        x1: 0
+        y1: 5
+        x2: 1
+        y2: 6
+    - pos: 19
+      description: 100% empty frame 19
+      mainFrame: false
+      sketch:
+        x1: 3
+        y1: 9
+        x2: 10
+        y2: 10
+    - pos: 20
+      description: Copyright frame 20
+      mainFrame: false
+      sketch:
+        x1: 3
+        y1: 11
+        x2: 10
+        y2: 11
+template: |-
+  <#assign wp=JspTaglibs["/aps-core"]>
+  <@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
+  <html>
+     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="DM" content="entando">
+        <title>
+           <@wp.i18n key="SBDEMO" /> - <@wp.currentPage param="title" />
+        </title>
+        <!-- Header inclusion-->
+        <@wp.fragment code="sbdemo_inclusion_header" escapeXml=false />
+        <@wp.fragment code="sbdemo_keycloak_auth" escapeXml=false />
+        <!-- Header inclusion END-->
+     </head>
+     <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+           <!-- Sidebar -->
+           <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar - Brand -->
+              <@wp.show frame=0 />
+              <!-- Divider -->
+              <hr class="sidebar-divider my-0">
+              <!-- Nav Item - Dashboard -->
+              <li class="nav-item active">
+                 <a class="nav-link" href="<@wp.url page="sb2_dashboard" />">
+                 <i class="fas fa-fw fa-tachometer-alt"></i>
+                 <span><@wp.i18n key="SBDEMO_DASHBOARD" /></span></a>
+              </li>
+              <!-- Divider -->
+              <hr class="sidebar-divider">
+              <!-- Heading -->
+              <div class="sidebar-heading">
+                 <@wp.i18n key="SBDEMO_SECTION1" />
+              </div>
+              <!-- Nav Item - Pages Collapse Menu -->
+              <@wp.show frame=6 />
+              <!-- Divider -->
+              <hr class="sidebar-divider">
+              <!-- Heading -->
+              <div class="sidebar-heading">
+                 <@wp.i18n key="SBDEMO_SECTION2" />
+              </div>
+              <!-- Nav Item - Pages Collapse Menu -->
+              <@wp.show frame=7 />
+              <!-- Divider -->
+              <hr class="sidebar-divider d-none d-md-block">
+              <!-- Sidebar Toggler (Sidebar) -->
+              <div class="text-center d-none d-md-inline">
+                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+              <!-- Sidebar Message -->
+              <@wp.show frame=18 />
+           </ul>
+           <!-- End of Sidebar -->
+           <!-- Content Wrapper -->
+           <div id="content-wrapper" class="d-flex flex-column">
+              <!-- Main Content -->
+              <div id="content">
+                 <!-- Topbar -->
+                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- Topbar Search -->
+                    <@wp.show frame=1 />
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                       <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                       <@wp.fragment code="sb2_mobile_search" escapeXml=false />
+                       <!-- Nav Item - Alerts -->
+                       <@wp.show frame=2 />
+                       <!-- Nav Item - Messages -->
+                       <@wp.show frame=3 />
+                       <div class="topbar-divider d-none d-sm-block"></div>
+                       <!-- Nav Item - Login User Information -->
+                       <@wp.show frame=4 />
+                    </ul>
+                 </nav>
+                 <!-- End of Topbar -->
+                 <!-- Begin Page Content -->
+                 <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <@wp.show frame=5 />
+                    <!-- Content Row -->
+                    <div class="row">
+                       <!-- Earnings (Monthly) Card Example -->
+                       <@wp.show frame=8 />
+                       <!-- Earnings (Annual) Card Example -->
+                       <@wp.show frame=9 />
+                       <!-- Earnings (Tasks) Card Example -->
+                       <@wp.show frame=10 />
+                       <!-- Pending Requests Card Example -->
+                       <@wp.show frame=11 />
+                    </div>
+                    <!-- Content Row -->
+                    <div class="row">
+                       <div class="col-xl-8 col-lg-7">
+                          <!-- Area Chart -->
+                          <@wp.show frame=12 />
+                       </div>
+                       <div class="col-xl-4 col-lg-5">
+                          <!-- Pie Chart -->
+                          <@wp.show frame=13 />
+                       </div>
+                    </div>
+                    <!-- Content Row -->
+                    <div class="row">
+                       <!-- Content Column -->
+                       <div class="col-lg-6 mb-4">
+                          <!-- Project Card Example -->
+                          <@wp.show frame=14 />
+                          <!-- Color System -->
+                          <@wp.show frame=16 />
+                       </div>
+                       <div class="col-lg-6 mb-4">
+                          <!-- Illustrations -->
+                          <@wp.show frame=15 />
+                          <!-- Approach -->
+                          <@wp.show frame=17 />
+                       </div>
+                      <div class="col-lg-12 mb-4">
+                          <!-- Empty frame -->
+                          <@wp.show frame=19 />
+                       </div>
+                    </div>
+                 </div>
+                 <!-- /.container-fluid -->
+              </div>
+              <!-- End of Main Content -->
+              <!-- Footer -->
+              <@wp.show frame=20 />
+           </div>
+           <!-- End of Content Wrapper -->
+        </div>
+        <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+        </a>
+        <!-- Footer inclusion-->
+        <@wp.fragment code="sbdemo_inclusion_footer" escapeXml=false />
+        <!-- Footer inclusion END-->
+     </body>
+  </html>
