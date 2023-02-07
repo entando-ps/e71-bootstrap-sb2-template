@@ -11,7 +11,7 @@ customUi: |-
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="mr-2 d-none d-lg-inline text-gray-600 small">${Session.currentUser}</span>
-          <img class="img-profile rounded-circle" src="<@wp.resourceURL />bundles/e71-bootstrap-sb2-template-15274a32/resources/sb2/img/undraw_profile.svg">
+          <img class="img-profile rounded-circle" src="<@wp.resourceURL />bundles/e71-bootstrap-sb2-template-c9b2d95d/resources/sb2/img/undraw_profile.svg">
       </a>
       <!-- Dropdown - User Information -->
       <#if (Session.currentUser.entandoUser) >

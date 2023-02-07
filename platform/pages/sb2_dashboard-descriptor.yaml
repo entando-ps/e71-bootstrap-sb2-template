@@ -29,11 +29,11 @@ widgets:
     pos: 4
   - code: sb2_widget_navigation_bar
     config:
-      navSpec: code(sb2_dashboard_15274a32)
+      navSpec: code(sb2_dashboard_c9b2d95d)
     pos: 6
   - code: sb2_widget_navigation_bar
     config:
-      navSpec: code(sb2_test_15274a32) + code(sb2_test2_15274a32).subtree(1)
+      navSpec: code(sb2_test_c9b2d95d) + code(sb2_test2_c9b2d95d).subtree(1)
     pos: 7
   - code: sb2_earnings_monthly_card
     config: null

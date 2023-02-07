@@ -13,7 +13,7 @@ customUi: |-
       <div class="card-body">
           <div class="text-center">
               <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                   src="<@wp.resourceURL />bundles/e71-bootstrap-sb2-template-15274a32/resources/sb2/img/undraw_posting_photo.svg" alt="...">
+                   src="<@wp.resourceURL />bundles/e71-bootstrap-sb2-template-c9b2d95d/resources/sb2/img/undraw_posting_photo.svg" alt="...">
           </div>
           <p>Add some quality, svg illustrations to your project courtesy of <a
                   target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
